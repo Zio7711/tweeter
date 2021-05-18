@@ -18,15 +18,20 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+
+  /* change the font style for body */
   font-family: 'Source Sans Pro', sans-serif;
 
   
 }
 
+/* create a class for displaying main tweet content */
 .container {
   display: flex;
   flex-direction: column;
   background-color: #f4f1ec;
+
+  /* set the width at 90% and make the content at the center */
   width: 90%;
   margin: 0 auto;
 }

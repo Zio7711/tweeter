@@ -1,19 +1,27 @@
+/* create a css file for nav bar */
 nav {
   color: #ffffff;
   background-color: #4056A1;
   font-size: 40px;
   height: 120px;
   width: 100%;
+
+  /* set the left and right padding and font*/
   padding: 0 1.5em 0 1.5em;
   font-family: 'Bungee', cursive;
+
+  /* set tweeter to the left of the bar and the rest test to the right */
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* set the nav bar as always at the top */
   position: fixed;
   z-index: 1;  
   top: 0;
 }
 
+/* create a class for "write a new tweet"*/
 .right {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -22,8 +30,3 @@ nav {
   align-items: center;
 
 }
-
-/* .overlay {
-  display: flex;
-  position: relative;
-} */
