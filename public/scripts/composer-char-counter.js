@@ -25,6 +25,21 @@ $(document).ready(() => {
     let charRemaining = maxChar - inputLength;
 
     //traversing up the DOM tree
-    $(this).parent().find('.counter').text(charRemaining);
+
+    //edge cases: counter turns red when invalid
+
+    if (charRemaining > 0) {
+      $(this)
+        .parents()
+        .find('.counter')
+        .text(charRemaining)
+        .css('color', '#545149');
+    } else {
+      $(this)
+        .parents()
+        .find('.counter')
+        .text(charRemaining)
+        .css('color', 'red');
+    }
   });
 });
