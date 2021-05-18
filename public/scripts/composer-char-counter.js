@@ -3,7 +3,9 @@ $(document).ready(() => {
   console.log('The DOM has loaded');
 
   //register an event handler to the textarea element for the form.
-  $('#tweet-text').on("keyup",() => {
-    console.log('Clicked');
+  $('#tweet-text').on('keyup', function() {
+    const maxChar = 140;
+    let typedInput = this.value;
+    console.log(this);
   });
 });
