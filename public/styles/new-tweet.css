@@ -1,0 +1,26 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+.submitLine {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputField {
+  margin-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom-style: solid;
+}
+
+.bold {
+  font-weight: bold
+}
+
+.buttonStyle {
+  font-family: 'Bungee', cursive;
+  background-color: blue;
+  color: aliceblue;
+}
