@@ -1,0 +1,6 @@
+/* create a class for tweeter container */
+.tweeterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
