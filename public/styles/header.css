@@ -1,0 +1,19 @@
+header {
+  color: #ffffff;
+  font-size: 24px;
+  height: 400px;
+  width: 100%;
+  padding: 0 0 0 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #00ad00;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+
+}
+
+.myName {
+  font-size: 48px;
+}
+
