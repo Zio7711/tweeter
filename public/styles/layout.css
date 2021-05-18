@@ -26,8 +26,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f4f1ec;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 
