@@ -1,7 +1,10 @@
+/* create a class for composing a new tweet */
 .new-tweet {
   display: flex;
   flex-direction: column;
 }
+
+/* Add footer section class */
 .submitLine {
   margin-top: 0.5em;
   display: flex;
@@ -9,16 +12,19 @@
   justify-content: space-between;
 }
 
+/* Add bottom border for input field */
 .inputField {
   margin-top: 0.5em;
   padding-bottom: 0.5em;
   border-bottom-style: solid;
 }
 
+/*Bold class */
 .bold {
   font-weight: bold
 }
 
+/* Create a class for button with Bungee font and blue background */
 .buttonStyle {
   font-family: 'Bungee', cursive;
   background-color: blue;
