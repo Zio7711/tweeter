@@ -24,10 +24,10 @@ $(document).ready(() => {
     //calculate the remaining chars for input field
     let charRemaining = maxChar - inputLength;
 
+    
+    
     //traversing up the DOM tree
-
     //edge cases: counter turns red when invalid
-
     if (charRemaining > 0) {
       $(this)
         .parents()

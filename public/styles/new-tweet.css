@@ -16,9 +16,7 @@
 /* Add bottom border for input field */
 .inputField {
   margin-top: 0.5em;
-  padding-bottom: 0.5em;
   border-bottom-style: solid;
-  
 }
 
 /*Bold class */
@@ -30,4 +28,12 @@
 .buttonStyle {
   background-color: blue;
   color: aliceblue;
+}
+
+#tweet-text {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 30px;
 }
