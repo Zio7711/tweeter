@@ -24,8 +24,6 @@ $(document).ready(() => {
     //calculate the remaining chars for input field
     let charRemaining = maxChar - inputLength;
 
-    
-    
     //traversing up the DOM tree
     //edge cases: counter turns red when invalid
     if (charRemaining > 0) {
@@ -43,12 +41,10 @@ $(document).ready(() => {
     }
   });
 
-
-
   //TODO: ensure tweets timestamp is targeting the right tweet.
   // calculate the time passed since a tweet
-/*   let time = timeago.format(new Date());  
+  let time = timeago.format(new Date());  
   $(".tweetsFooter")
   .find('span')
-  .text(time) */
+  .text(time) 
 });
