@@ -22,8 +22,11 @@ $(document).ready(() => {
 
   // create a function that returns a tweet element
   const createTweetElement = (tweetObj) => {
-    const $tweet = $(`<article class="tweet">Hello world</article>`);
-    const $header = $(`
+    //create article element
+    const $tweet = $(`<article></article>`);
+
+    //create child element header for article
+    const $tweetHeader = $(`
       <header>
         <div>
           <img src="/images/boy.png"> 
@@ -33,11 +36,15 @@ $(document).ready(() => {
       </header>
     `)
 
+    //calculate the time passed since tweeted
+    let time = timeago.format(tweetObj['created_at']);
+    
+    //create child element content for article
     const $content = $(`
     <div>
       <h2>${tweetObj.content.text}</h2>
       <div class="tweetsFooter">
-        <span>10 days ago</span>
+        <span>${time}</span>
         <div>
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
@@ -48,15 +55,14 @@ $(document).ready(() => {
     </div>
     `)
 
-    $tweet.append($header);
+    //append the header and content to article
+    $tweet.append($tweetHeader);
     $tweet.append($content);
-    return $tweet
+    return $tweet;
   };
 
   // Test / driver code (temporary)
   const $tweet = createTweetElement(tweetData);
-  console.log('tweet', $tweet); // to see what it looks like
-  console.log('tweets-container', $('#tweets-container')); 
   $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
 });
