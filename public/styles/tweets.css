@@ -8,6 +8,7 @@ article {
   margin: 2em 0 2em 0;
 }
 
+/* hover state to display shadow of the box */
 article:hover {
   box-shadow: 5px 10px purple
 }

@@ -42,4 +42,11 @@ $(document).ready(() => {
         .css('color', 'red');
     }
   });
+
+
+  // calculate the time passed since a tweet
+  let time = timeago.format(new Date());  
+  $(".tweetsFooter")
+  .find('span')
+  .text(time)
 });
