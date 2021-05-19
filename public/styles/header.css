@@ -1,6 +1,6 @@
 /* create header selector to display user's avatar and username */
 
-header {
+.headerMain {
   color: #ffffff;
   font-size: 24px;
   height: 400px;

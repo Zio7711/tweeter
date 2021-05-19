@@ -26,7 +26,7 @@ body {
 }
 
 /* create a class for displaying main tweet content */
-.container {
+.mainContainer {
   display: flex;
   flex-direction: column;
   background-color: #f4f1ec;
@@ -35,7 +35,6 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-
 
 
 /*

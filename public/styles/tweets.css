@@ -1,6 +1,22 @@
 /* create a class for tweeter container */
-.tweeterContainer {
+article {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: solid;
+  padding: 1em 1em 1em 1em;
+  margin: 2em 0 2em 0;
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweetsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid;
+  padding-top: 0.5em;
 }
