@@ -40,7 +40,7 @@ $(document).ready(() => {
     const $tweetHeader = $(`
       <header>
         <div>
-          <img src="/images/boy.png"> 
+          <img src="${tweetObj.user.avatars}"> 
           <span> ${tweetObj.user.name} </span>
         </div>
         <span>${tweetObj.user.handle}</span>
@@ -73,13 +73,28 @@ $(document).ready(() => {
   };
 
   //create a  function that can be responsible for taking in an array of tweet objects and then appending each one to the #tweets-container.
-
   const renderTweets = (tweetsArr) => {
+
+    //loop through each tweets inside of the array
     for (const eachTweet of tweetsArr) {
+
+      //invoke the function and append each article into the html
       let $tweet = createTweetElement(eachTweet);
       $('#tweets-container').append($tweet);
     }
   };
 
   renderTweets(data);
+
+
+
+
+
+  //Add an Event Listener and Prevent the Default Behaviour
+  $('#newTweetForm').submit(function (event) {
+    event.preventDefault();
+    let formData = $(this).serialize()
+    console.log( formData);
+    jQuery.post('/tweets', formData);
+  }); 
 });
