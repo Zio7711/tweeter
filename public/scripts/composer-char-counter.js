@@ -44,9 +44,11 @@ $(document).ready(() => {
   });
 
 
+
+  //TODO: ensure tweets timestamp is targeting the right tweet.
   // calculate the time passed since a tweet
-  let time = timeago.format(new Date());  
+/*   let time = timeago.format(new Date());  
   $(".tweetsFooter")
   .find('span')
-  .text(time)
+  .text(time) */
 });
