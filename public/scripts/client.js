@@ -5,6 +5,7 @@
  */
 
 $(document).ready(() => {
+  //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET' })
       .then((result) => {
@@ -13,6 +14,7 @@ $(document).ready(() => {
       .catch((error) => console.log(error));
   };
 
+  //call function to show the exsisting tweets
   loadTweets();
 
   // create a function that returns a tweet element
@@ -45,7 +47,6 @@ $(document).ready(() => {
           <i class="fas fa-retweet"></i>
           <i class="fas fa-heart"></i>
         </div>
-
       </div>
     </div>
     `);
@@ -77,6 +78,4 @@ $(document).ready(() => {
       })
       .catch((error) => console.log(error));
   });
-
-  //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
 });
