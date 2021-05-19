@@ -4,33 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    user: {
-      name: 'Newton',
-      avatars: 'https://i.imgur.com/73hZDYK.png',
-      handle: '@SirIsaac',
-    },
-    content: {
-      text: 'If I have seen further it is by standing on the shoulders of giants',
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: 'Descartes',
-      avatars: 'https://i.imgur.com/nlhLi3I.png',
-      handle: '@rd',
-    },
-    content: {
-      text: 'Je pense , donc je suis',
-    },
-    created_at: 1461113959088,
-  },
-];
-
 $(document).ready(() => {
+  const loadTweets = () => {
+    $.ajax('/tweets', { method: 'GET' })
+      .then((result) => {
+        renderTweets(result);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  loadTweets();
+
   // create a function that returns a tweet element
   const createTweetElement = (tweetObj) => {
     //create article element
@@ -74,27 +58,25 @@ $(document).ready(() => {
 
   //create a  function that can be responsible for taking in an array of tweet objects and then appending each one to the #tweets-container.
   const renderTweets = (tweetsArr) => {
-
     //loop through each tweets inside of the array
     for (const eachTweet of tweetsArr) {
-
       //invoke the function and append each article into the html
       let $tweet = createTweetElement(eachTweet);
       $('#tweets-container').append($tweet);
     }
   };
 
-  renderTweets(data);
-
-
-
-
-
   //Add an Event Listener and Prevent the Default Behaviour
   $('#newTweetForm').submit(function (event) {
     event.preventDefault();
-    let formData = $(this).serialize()
-    console.log( formData);
-    jQuery.post('/tweets', formData);
-  }); 
+    let formData = $(this).serialize();
+    $.ajax('/tweets', { method: 'POST', data: formData })
+      .then(() => {
+        $('#tweets-container').empty()
+        loadTweets();
+      })
+      .catch((error) => console.log(error));
+  });
+
+  //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
 });
