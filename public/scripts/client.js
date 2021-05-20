@@ -90,7 +90,7 @@ $(document).ready(() => {
         .show()
         .delay(2500)
         .fadeOut();
-    } else if (remainingNum === '140') {
+    } else if (remainingNum === '140' || this[0].value) {
       $('.errorMsg')
         .text('Please input something!!!!')
         .show()
