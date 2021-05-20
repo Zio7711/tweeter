@@ -40,10 +40,9 @@ $(document).ready(() => {
     //calculate the time passed since tweeted
     let time = timeago.format(tweetObj['created_at']);
 
-
     //create an escape funtion to avoid xss
-    const escape = function (str) {
-      let div = document.createElement("div");
+    const escape = function(str) {
+      let div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
@@ -87,7 +86,7 @@ $(document).ready(() => {
   };
 
   //Add an Event Listener and Prevent the Default Behaviour
-  $('#newTweetForm').submit(function (event) {
+  $('#newTweetForm').submit(function(event) {
     event.preventDefault();
 
     //edge case: disallow form submission in the event that the tweet area is empty, or exceeds the 140 character limit.
@@ -97,13 +96,13 @@ $(document).ready(() => {
         .text('TOO Long!!! make it concise!!!')
         .slideDown(1000)
         .delay(2000)
-        .fadeOut(1)
-    } else if (remainingNum === '140' || !this[0].value.split("\n").join("")) {
+        .fadeOut(1);
+    } else if (remainingNum === '140' || !this[0].value.split('\n').join('')) {
       $('.errorMsg')
         .text('Yo!!! Type somthing!!!')
         .slideDown(1000)
         .delay(2000)
-        .fadeOut(1)
+        .fadeOut(1);
     } else {
       let formData = $(this).serialize();
       $.ajax('/tweets', { method: 'POST', data: formData })
@@ -115,5 +114,4 @@ $(document).ready(() => {
         .catch((error) => console.log(error));
     }
   });
-
 });
