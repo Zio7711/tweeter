@@ -53,6 +53,7 @@ nav {
   color: red;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .moveImg button:hover {

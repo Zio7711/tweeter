@@ -26,3 +26,12 @@
   font-size: 48px;
 }
 
+/* Responsive design for deskop */
+@media only screen and (min-width: 1024px) {
+  .headerMain {
+    width: 40%;
+    margin: 2em 0 0 0;
+    float: left;
+  }
+}
+
