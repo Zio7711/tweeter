@@ -7,6 +7,8 @@
 $(document).ready(() => {
   //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
   $('.new-tweet').hide();
+  $('.backToTop').hide();
+  
   const loadTweets = (getAll) => {
     $.ajax('/tweets', { method: 'GET' })
       .then((result) => {
@@ -98,7 +100,9 @@ $(document).ready(() => {
         .slideDown(1000)
         .delay(2000)
         .fadeOut(1);
-    } else if (remainingNum === '140' || !this[0].value.split('\n').join('')) {
+    } else if (remainingNum === '140' 
+    || !this[0].value.split('\n').join('')
+    || !this[0].value.split(' ').join('')) {
       $('.errorMsg')
         .text('Yo!!! Type somthing!!!')
         .slideDown(1000)
@@ -122,5 +126,21 @@ $(document).ready(() => {
     $('.new-tweet').slideToggle();
   });
 
+
+  //make a back to top button.
+  $(window).scroll(() => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      $('.backToTop').show()
+    } else {
+      $('.backToTop').hide()
+    }
+  });
+
+
+  $('.backToTop').click(function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    $('.new-tweet').slideDown();
+  });
 
 });
