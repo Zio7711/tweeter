@@ -46,3 +46,16 @@ nav {
     top: 0px;
   }
 }
+
+/* create class when hovering over the button, it will change color */
+.moveImg button {
+  background: transparent;
+  color: red;
+  border: none;
+  outline: none;
+}
+
+.moveImg button:hover {
+  background: green;
+  border: solid
+}

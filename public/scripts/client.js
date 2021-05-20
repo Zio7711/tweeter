@@ -6,6 +6,7 @@
 
 $(document).ready(() => {
   //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
+  $('.new-tweet').hide();
   const loadTweets = (getAll) => {
     $.ajax('/tweets', { method: 'GET' })
       .then((result) => {
@@ -114,4 +115,12 @@ $(document).ready(() => {
         .catch((error) => console.log(error));
     }
   });
+
+
+  //jQuery function that will slide the whole new-tweet section up or down when the button is clicked
+  $('.moveImg').click(function() {
+    $('.new-tweet').slideToggle();
+  });
+
+
 });
