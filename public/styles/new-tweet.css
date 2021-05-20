@@ -25,6 +25,11 @@
   color: aliceblue;
 }
 
+.buttonStyle:hover {
+  background-color: green;
+}
+
+
 /* Update the input field. Set the border and outline as none */
 #tweet-text {
   outline: none;
