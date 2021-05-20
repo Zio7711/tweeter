@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,27 +14,35 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-
   /* change the font style for body */
-  font-family: 'Source Sans Pro', sans-serif;
-
-  
+  font-family: "Source Sans Pro", sans-serif;
+  /* create a class for displaying main tweet content */
+  /* Responsive design for deskop */
 }
-
-/* create a class for displaying main tweet content */
-.mainContainer {
+body .mainContainer {
   display: flex;
   flex-direction: column;
   background-color: #f4f1ec;
-
   /* set the width at 90% and make the content at the center */
   width: 90%;
   margin: 0 auto;
+}
+@media only screen and (min-width: 1024px) {
+  body .viewDesign {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 100px 50px;
+  }
+  body .mainContainer {
+    width: 55%;
+    margin: 0 0 0 1em;
+  }
 }
 
 /* back to top button class */
@@ -59,20 +68,4 @@ body {
 
 .backToTop:hover {
   background-color: green;
-}
-
-
-/* Responsive design for deskop */
-@media only screen and (min-width: 1024px) {
-  .viewDesign {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 100px
-  }
-  .mainContainer {
-    width: 55%;
-    margin: 0 0 0 0;
-  }
 }

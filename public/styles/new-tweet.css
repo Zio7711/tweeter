@@ -3,37 +3,31 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 1em;
+  /* Add footer section class */
+  /*Bold class */
+  /* Update the input field. Set the border and outline as none */
+  /* error message class */
 }
-
-/* Add footer section class */
-.submitLine {
+.new-tweet .submitLine {
   margin-top: 0.5em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
+  /* Create a class for button with Bungee font and blue background */
 }
-
-/*Bold class */
-.bold {
-  font-weight: bold
-}
-
-/* Create a class for button with Bungee font and blue background */
-.buttonStyle {
+.new-tweet .submitLine .buttonStyle {
   background-color: blue;
   color: aliceblue;
   cursor: pointer;
 }
-
-.buttonStyle:hover {
+.new-tweet .submitLine .buttonStyle:hover {
   background-color: green;
 }
-
-
-/* Update the input field. Set the border and outline as none */
-#tweet-text {
+.new-tweet .bold {
+  font-weight: bold;
+}
+.new-tweet #tweet-text {
   outline: none;
   border: none;
   border-bottom-style: solid;
@@ -41,8 +35,6 @@
   width: 100%;
   height: 48px;
 }
-
-/* error message class */
-.errorMsg {
+.new-tweet .errorMsg {
   color: red;
 }

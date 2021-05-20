@@ -10,9 +10,8 @@ article {
 
 /* hover state to display shadow of the box */
 article:hover {
-  box-shadow: 5px 10px purple
+  box-shadow: 5px 10px purple;
 }
-
 
 /* create header class for tweets */
 article header {

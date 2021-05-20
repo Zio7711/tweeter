@@ -5,39 +5,34 @@ nav {
   font-size: 40px;
   height: 120px;
   width: 100%;
-
+  min-width: 520px;
   /* set the left and right padding and font*/
   padding: 0 1.5em 0 1.5em;
-  font-family: 'Bungee', cursive;
-
+  font-family: "Bungee", cursive;
   /* set tweeter to the left of the bar and the rest test to the right */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   /* set the nav bar as always at the top */
   position: fixed;
-  z-index: 1;  
+  z-index: 1;
   top: 0;
+  /* create a class for "write a new tweet"*/
+  /* add animation for the arrow */
+  /* create class when hovering over the button, it will change color */
 }
-
-/* create a class for "write a new tweet"*/
-.right {
+nav .right {
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-/* add animation for the arrow */
-.moveImg {
+nav .moveImg {
   animation: MoveUpDown 1s linear infinite;
   position: relative;
   color: red;
-
 }
-
 @keyframes MoveUpDown {
   0%, 100% {
     top: 10px;
@@ -46,17 +41,14 @@ nav {
     top: 0px;
   }
 }
-
-/* create class when hovering over the button, it will change color */
-.moveImg button {
+nav .moveImg button {
   background: transparent;
   color: red;
   border: none;
   outline: none;
   cursor: pointer;
 }
-
-.moveImg button:hover {
+nav .moveImg button:hover {
   background: green;
-  border: solid
+  border: solid;
 }
