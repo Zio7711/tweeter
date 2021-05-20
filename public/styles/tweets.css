@@ -33,3 +33,7 @@ article header {
 div.tweetsFooter i:hover {
   color: orange;
 }
+
+.contentBreak {
+  word-break: break-all;
+}
