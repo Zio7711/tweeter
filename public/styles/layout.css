@@ -60,3 +60,19 @@ body {
 .backToTop:hover {
   background-color: green;
 }
+
+
+/* Responsive design for deskop */
+@media only screen and (min-width: 1024px) {
+  .viewDesign {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 100px
+  }
+  .mainContainer {
+    width: 55%;
+    margin: 0 0 0 0;
+  }
+}
