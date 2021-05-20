@@ -1,24 +1,31 @@
 /* create header selector to display user's avatar and username */
+
 .headerMain {
   color: #ffffff;
   font-size: 24px;
   height: 400px;
   width: 100%;
   display: flex;
+
   /* Move the element to the center */
   justify-content: center;
   align-items: center;
+
   flex-direction: column;
   background-color: #00ad00;
+
   /* import external background with different texture */
-  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png"); 
+
   /* move the header block below the nav bar */
-  margin-top: 100px;
+  margin-top: 100px; 
+
   /* create a subclass .myname to adjust the size of username */
+  .myName {
+    font-size: 48px;
+  }
 }
-.headerMain .myName {
-  font-size: 48px;
-}
+
 
 /* Responsive design for deskop */
 @media only screen and (min-width: 1024px) {
@@ -29,3 +36,4 @@
     left: 2em;
   }
 }
+

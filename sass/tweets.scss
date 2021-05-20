@@ -1,0 +1,39 @@
+/* create a class for tweeter container */
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid;
+  padding: 1em 1em 1em 1em;
+  margin: 2em 0 2em 0;
+}
+
+/* hover state to display shadow of the box */
+article:hover {
+  box-shadow: 5px 10px purple
+}
+
+
+/* create header class for tweets */
+article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Add footer class for each tweets */
+.tweetsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid;
+  padding-top: 0.5em;
+}
+
+/* Use CSS to implement the hover state */
+div.tweetsFooter i:hover {
+  color: orange;
+}
+
+.contentBreak {
+  word-break: break-all;
+}

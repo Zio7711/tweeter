@@ -1,0 +1,53 @@
+/* create a class for composing a new tweet */
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  /* Add footer section class */
+  .submitLine {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Bungee', cursive;
+
+     /* Create a class for button with Bungee font and blue background */
+    .buttonStyle {
+      background-color: blue;
+      color: aliceblue;
+      cursor: pointer;
+    }
+
+    .buttonStyle:hover {
+      background-color: green;
+    }
+
+  }
+
+  /*Bold class */
+  .bold {
+    font-weight: bold
+  }
+
+  /* Update the input field. Set the border and outline as none */
+  #tweet-text {
+    outline: none;
+    border: none;
+    border-bottom-style: solid;
+    background-color: transparent;
+    width: 100%;
+    height: 48px;
+  }
+  
+  /* error message class */
+  .errorMsg {
+    color: red;
+  }
+
+}
+
+
+
+
+
