@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 1em;
 }
 
 /* Add footer section class */
@@ -23,6 +24,7 @@
 .buttonStyle {
   background-color: blue;
   color: aliceblue;
+  cursor: pointer;
 }
 
 .buttonStyle:hover {
