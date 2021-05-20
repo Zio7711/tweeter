@@ -6,16 +6,20 @@
 
 $(document).ready(() => {
   //create loadTweets function that is responsible for fetching tweets from the http://localhost:8080/tweets page.
-  const loadTweets = () => {
+  const loadTweets = (getAll) => {
     $.ajax('/tweets', { method: 'GET' })
       .then((result) => {
-        renderTweets(result);
+        if (getAll) {
+          renderTweets(result);
+        } else {
+          renderLastTweet(result);
+        }
       })
       .catch((error) => console.log(error));
   };
 
   //call function to show the exsisting tweets
-  loadTweets();
+  loadTweets(true);
 
   // create a function that returns a tweet element
   const createTweetElement = (tweetObj) => {
@@ -60,22 +64,59 @@ $(document).ready(() => {
   //create a  function that can be responsible for taking in an array of tweet objects and then appending each one to the #tweets-container.
   const renderTweets = (tweetsArr) => {
     //loop through each tweets inside of the array
+
     for (const eachTweet of tweetsArr) {
       //invoke the function and append each article into the html
       let $tweet = createTweetElement(eachTweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
+  };
+
+  //only render the very lattest tweet
+  const renderLastTweet = (tweetsArr) => {
+    let $tweet = createTweetElement(tweetsArr[tweetsArr.length - 1]);
+    $('#tweets-container').prepend($tweet);
   };
 
   //Add an Event Listener and Prevent the Default Behaviour
   $('#newTweetForm').submit(function (event) {
     event.preventDefault();
-    let formData = $(this).serialize();
-    $.ajax('/tweets', { method: 'POST', data: formData })
-      .then(() => {
-        $('#tweets-container').empty()
-        loadTweets();
-      })
-      .catch((error) => console.log(error));
+
+    //edge case: disallow form submission in the event that the tweet area is empty, or exceeds the 140 character limit.
+    const remainingNum = $('.counter')[0].value;
+    if (remainingNum < 0) {
+      $('.errorMsg')
+        .text('Your input is too LONG!!!')
+        .show()
+        .delay(2500)
+        .fadeOut();
+    } else if (remainingNum === '140') {
+      $('.errorMsg')
+        .text('Please input something!!!!')
+        .show()
+        .delay(2500)
+        .fadeOut();
+    } else {
+      let formData = $(this).serialize();
+      $.ajax('/tweets', { method: 'POST', data: formData })
+        .then(() => {
+          $('textarea').val('');
+          loadTweets();
+        })
+        .catch((error) => console.log(error));
+    }
   });
+
+  //Validate function to check if the input info is ok
+  const inputMessage = (remaining) => {
+    console.log($('.counter').value);
+
+    let errorMessage = '';
+    if (content.length > 140) {
+      errorMessage = 'Your message is too long!!!!!';
+    } else if (content === '') {
+      errorMessage = "Don't leave it blank!!!";
+    }
+    return errorMessage;
+  };
 });
